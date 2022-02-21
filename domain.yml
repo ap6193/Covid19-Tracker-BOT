@@ -1,0 +1,160 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- what_is_corona
+- symptoms
+- concern
+- prevention
+- Vaccination
+- incubation
+- thanks
+- details
+- more_info
+- cases_India
+- cases_world
+- cases_states
+- ask_location
+- ask_states
+- ask_world
+- Find
+entities:
+- country
+- state
+slots:
+  country:
+    type: text
+  state:
+    type: text
+responses:
+  utter_greet:
+  - image: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnuM1hNTwCgVZYgkkf56kP3-o1Vlz7BW7RAA&usqp=CAU
+    text: Hey! I am a Covid19 Info Bot. How may I assist you?
+  utter_corona:
+  - text: "COVID-19 is a new illness that can affect your lungs and airways. It is\
+      \ caused by a virus called coronavirus. COVID-19 is the disease caused by the\
+      \ new coronavirus that emerged in China in December 2019. \n (Is there anything\
+      \ else you would like to know?)"
+  utter_symptoms:
+  - text: "COVID-19 symptoms includes Cough, Fever and Shortness of breath. \n (Is\
+      \ there anything else you would like to know?)"
+  utter_concern:
+  - text: "Yes, from the recent information indicates COVID-19 may be passed from\
+      \ person to person. Community spread is being seen, also. Community spread means\
+      \ people have been infected with the virus in a particular area, including some\
+      \ people who are not sure how or where they became infected. COVID-19 has been\
+      \ detected in people throughout China and in over 100 other countries, including\
+      \ the United States. \n (Is there anything else you would like to know?)"
+  utter_prevent:
+  - text: "Wash your hands frequently and thoroughly for at least 20 seconds, Use\
+      \ alcohol-based hand sanitizer if soap and water aren’t available. Cover coughs\
+      \ and sneezes with a tissue, then throw the tissue in the trash. Avoid touching\
+      \ your eyes, nose or mouth with unwashed hands. Stay home when you are sick.\
+      \ Clean and disinfect surfaces and objects people frequently touch. Cover your\
+      \ face with a mask to prevent yourself from getting in contact with coronavirus.\
+      \ \n (Is there anything else you would like to know?)"
+  utter_Vaccination:
+  - text: "Sorry, there is no vaccine. \n (Is there anything else?)"
+  utter_incubation:
+  - text: "It appears that symptoms are showing up in people within 14 days of exposure\
+      \ to the virus. \n (Is there anything else you would like to know?)"
+  utter_thanks:
+  - text: You're welcome and Stay safe.
+  utter_goodbye:
+  - text: Bye
+  utter_website:
+  - text: "Here is the [link](https://www.who.int/health-topics/coronavirus#tab=tab_1)\
+      \ for more information on Covid19. If you want to track the number of cases,\
+      \ please refer this [website](https://www.worldometers.info/coronavirus/). \n\
+      \ (Is there anything else you would like to know?)"
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask:
+  - text: Would you like to know more about this?
+  utter_end:
+  - text: No worries!
+  utter_location:
+  - text: "Please provide the country name of which you want the information.\n (Note:\
+      \ Please type the name in title case, Eg. New Zealand; and in all capitals for\
+      \ abbreviations, Eg. UAE)"
+  utter_cases:
+  - text: "Total number of cases in India are: Confirmed:{confirm}\n Recovered:{recovered}\n\
+      \ Deceased:{deceased}\n Stay home, stay safe.. \n Is there anything else I can\
+      \ do for you?"
+  utter_world_cases:
+  - text: "Total number of cases in {Country} are: Confirmed:{confirm}\n Recovered:{recovered}\n\
+      \ Deceased:{deceased}\n Stay home, stay safe.. \n Is there anything else I can\
+      \ do for you?"
+  utter_state_cases:
+  - text: "Total number of cases in {State} (USA) are: Confirmed:{confirm}\n Recovered:{recovered}\n\
+      \ Deceased:{deceased}\n Stay home, stay safe.. \n Is there anything else I can\
+      \ do for you?"
+  utter_total_cases:
+  - text: "Total number of cases across the world are: Confirmed:{confirm}\n Recovered:{recovered}\n\
+      \ Deceased:{deceased}\n Stay home, stay safe.. \n Is there anything else I can\
+      \ do for you?"
+  utter_state:
+  - text: "Please provide the state name of which you want the information.\n (Note:\
+      \ Please type the name in title case, Eg. New York)"
+  utter_choose:
+  - buttons:
+    - payload: /what_is_corona
+      title: What is Corona Virus?
+    - payload: /symptoms
+      title: Symptoms
+    - payload: /concern
+      title: Extent of the issue
+    - payload: /prevention
+      title: Prevention Strategies
+    - payload: /Vaccination
+      title: Vaccination
+    - payload: /incubation
+      title: Incubation Period
+    - payload: /Find
+      title: Stats
+    - payload: /more_info
+      title: More Info
+    text: What would you like to know about?
+  utter_choose_case:
+  - buttons:
+    - payload: /ask_location
+      title: Country-wise
+    - payload: /ask_states
+      title: State-wise
+    - payload: /ask_world
+      title: World
+    text: What would you like to know about?
+  utter_default:
+  - text: Sorry, I didn't understand. Please try again..
+actions:
+- utter_greet
+- utter_corona
+- utter_symptoms
+- utter_concern
+- utter_prevent
+- utter_incubation
+- utter_Vaccination
+- utter_thanks
+- utter_iamabot
+- utter_goodbye
+- utter_choose
+- utter_website
+- utter_end
+- utter_ask
+- utter_default
+- action_cases_India
+- utter_cases
+- action_world_cases
+- action_state_cases
+- utter_location
+- utter_world_cases
+- utter_state
+- utter_state_cases
+- utter_choose_case
+- utter_total_cases
+- action_total_cases
